@@ -8,7 +8,7 @@
 import sys
 def factorial(num): 
     if num < 0: 
-        print("Factorial de un número negativo no existe")
+        print(num, "! Factorial de un número negativo no existe")
 
     elif num == 0: 
         return 1
@@ -22,14 +22,41 @@ def factorial(num):
 
 
 
-if len(sys.argv) == 1:
-   print("Debe informar un número!")
-   num = int(input("Ingrese el numero: "))
-   print("Factorial ",num,"! es ", factorial(num)) 
-   sys.exit()
-else:
-    num=int(sys.argv[1])
-    print("Factorial ",num,"! es ", factorial(num)) 
+if len (sys.argv) == 1:
+   print("Debe informar el rango de factoriales a calcular!")
+   num1 = int(input("Ingrese el numero inferior del rango: "))
+   num2 = int(input("Ingrese el numero superior del rango: "))
 
-#Archivo modificado para solicitar argumento en caso de que se omita
+   for i in range(num1, num2+1):
+        if(i < 0):
+            print(factorial(i))
+        else:
+            print("Factorial ",i,"! es ", factorial(i)) 
+
+   sys.exit()
+
+elif len (sys.argv) == 2:
+    print("Debe igresar también el numero superior del rango")
+    num1 = int(sys.argv[1])
+    print("Limite inferior: ", num1)
+    num2 = int(input("Ingrese el numero superior del rango: "))
+
+    for i in range(num1, num2+1):
+        if(i < 0):
+            print(factorial(i))
+        else:
+            print("Factorial ",i,"! es ", factorial(i)) 
+
+    sys.exit()
+    
+elif len (sys.argv) == 3:
+    num1= int(sys.argv[1])
+    num2= int(sys.argv[2])
+    for i in range(num1, num2+1):
+        if(i < 0):
+            print(factorial(i))
+        else:
+            print("Factorial ",i,"! es ", factorial(i)) 
+
+#Archivo modificado para solicitar rangos como argumentos
  
