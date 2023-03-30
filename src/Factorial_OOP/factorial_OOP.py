@@ -18,7 +18,8 @@ class Factorial:
                     n -= 1
                 print("Factorial de ", i, ": ", fact)
 
-nuevoFactorial = Factorial(-4, 9)
+nuevoFactorial = Factorial(4, 12)
 
+print("Factorial entre", nuevoFactorial.min, "y", nuevoFactorial.max)
 nuevoFactorial.run()
 
