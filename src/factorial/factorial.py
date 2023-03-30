@@ -45,7 +45,9 @@ if len (sys.argv) == 1:
 
     sys.exit()
 
-#En caso de que se pasen los 2 numeros como parámetro
+
+# En caso de que se pasen los 2 numeros como parámetro, el primero será el limite "hasta" para el rango (1, nroIngresado)
+# El segundo sera el limite "desde" para el rango (nroIngresado, 60) 
 elif len (sys.argv) == 3:
     num1= int(sys.argv[1])
     num2= int(sys.argv[2])
@@ -69,6 +71,6 @@ elif len (sys.argv) == 3:
     sys.exit()
     
 # Archivo modificado para:
-#   - solicitar parametro "hasta" y calcular factorial desde 1 hasta el nro indicado.
-#   - Solicitar parametro "desde" y calcular factorial desde el nro indicado hasta 60.
+#   - solicitar parametro "hasta" y "desde"
+
  
