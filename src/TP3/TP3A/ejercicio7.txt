@@ -1,0 +1,1 @@
+Sería conveniente implementar el patrón abstract factory en el caso que necesitemos crear diferentes personajes para un videojuego. Los personajes pueden ser magos, dragones o caballeros. A su vez, estos personajes pueden ser del tipo fuego, hielo o eléctrico. De este modo podemos crear, por ejemplo, un mago de fuego, un dragón eléctrico, un caballero de hielo, etc.
