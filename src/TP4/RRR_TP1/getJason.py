@@ -6,6 +6,7 @@
 # Compiled at: 2022-06-15 03:15:55
 # coding=utf-8
 
+#copyright IS2 2022,2023 todos los derechos reservados
 
 import json, sys
 
@@ -20,8 +21,11 @@ class Singleton():
 class GetJason(Singleton):
 
     def getHelp(self):
+        """ Muestra un mensaje de ayuda en pantalla """
         print("mensaje de ayuda: \n - Debe ingresar el archivo json como primer argumento\n - Debe ingresar un token como segundo argumento" )
+    
     def getToken(self, jsf, token):
+        """ Muestra en pantalla la clave de acceso API correspondiente al token ingresado """
         try:
             with open(jsf, 'r') as (myfile):
                 data = myfile.read()
@@ -29,19 +33,22 @@ class GetJason(Singleton):
                 print (str(obj[token]))
         except: print("Error: No se ha podido recuperar la clave. Es posible que alguno de los argumentos sean invalidos. Ingrese -h para ayuda.")
 
-
+#-----------MAIN-----------#
 gj1 = GetJason()
 gj2 = GetJason()
 
+# El control de los argumentos se realiza previo al llamado de los metodos
 try:
     if(sys.argv[1]):
 
+        # Si el primer argumento es -h se invoca al metodo getHelp del objeto GetJason
         if(sys.argv[1] == "-h"):  
             gj1.getHelp()
 
         else:
             try:                
                 if (sys.argv[2]):
+                    # Si existe un segundo argumento se invoca al metodo getToken
                     gj1.getToken(sys.argv[1], sys.argv[2])
             except:
                 print("Error: Segundo argumento inextistente. Ingrese -h para ayuda.")
